@@ -5,4 +5,4 @@ RUN apk add --update gcc make musl-dev curl && \
     apk del gcc make musl-dev && \
     rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/sh", "-c"]
