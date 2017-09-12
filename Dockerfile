@@ -1,8 +1,7 @@
-FROM ruby:alpine
+FROM ruby:stretch
 
-RUN apk add --update gcc make musl-dev curl tar binutils && \
+RUN apt-get -y install build-essential curl tar && \
     gem install --no-ri --no-rdoc fpm && \
-    apk del gcc make musl-dev && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["/bin/sh", "-c"]
