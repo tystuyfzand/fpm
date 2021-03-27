@@ -1,7 +1,7 @@
 FROM ruby:alpine
 
 RUN apk add --update gcc make musl-dev curl tar binutils rpm && \
-    gem install --no-ri --no-rdoc fpm && \
+    gem install --no-document fpm && \
     apk del gcc make musl-dev && \
     rm -rf /var/cache/apk/*
 
